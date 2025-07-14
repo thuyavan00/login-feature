@@ -16,17 +16,4 @@ export class UsersController {
     return this.usersService.findById(req.user.userId);
   }
 
-  // GET /users      (admin only)
-  @Get()
-  @Roles(Role.ADMIN)
-  findAll() {
-    return this.usersService.findAll();
-  }
-
-  // GET /users/:id  (admin only)
-  @Get(':id')
-  @Roles(Role.ADMIN)
-  findOne(@Param('id') id: string) {
-    return this.usersService.findById(+id);
-  }
 }
